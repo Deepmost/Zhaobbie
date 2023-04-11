@@ -416,7 +416,6 @@ namespace UnityEditor.Tilemaps
             uniqueNames.Clear();
             EditorUtility.DisplayProgressBar("Generating Tile Assets (" + i + "/" + sheet.Count + ")", "Generating tiles", 0f);
 
-            AssetDatabase.StartAssetEditing();
             try
             {
                 MethodInfo createTileMethod = GridPaintActiveTargetsPreferences.GetCreateTileFromPaletteUsingPreferences();
@@ -479,7 +478,6 @@ namespace UnityEditor.Tilemaps
             }
             finally
             {
-                AssetDatabase.StopAssetEditing();
                 EditorUtility.ClearProgressBar();
             }
 
