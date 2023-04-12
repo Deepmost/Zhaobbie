@@ -21,6 +21,8 @@ public class WinZone : MonoBehaviour
 		if (collision.gameObject.layer == playerLayer)
 		{
             GameManager.PlayerWon();
+			if (SceneManager.GetActiveScene().buildIndex + 1 > 3)
+				return;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }	//return;
 		
